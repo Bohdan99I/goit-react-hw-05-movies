@@ -1,20 +1,29 @@
-import { Link, Routes, Route } from 'react-router-dom';
-import Home from 'pages/Home';
-import Movies from 'pages/Movies';
-import MovieDetails from 'pages/MovieDetails';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { lazy } from 'react';
+import TmdbLayout from './TmdbLayout/TmdbLayout';
+
+const HOME_PATH = '/';
+const MOVIES_PATH = '/movies';
+const MOVIE_DETAILS_PATH = '/movies/:movieId';
+
+const Home = lazy(() => import('../pages/Home'));
+const Movie = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
+const TmdbCast = lazy(() => import('./TmdbCast/TmdbCast'));
+const TmdbReview = lazy(() => import('./TmdbReview/TmdbReview'));
 
 export const App = () => {
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies:movieId" element={<MovieDetails />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path={HOME_PATH} element={<TmdbLayout />}>
+        <Route index element={<Home />} />
+        <Route path={MOVIES_PATH} element={<Movie />} />
+        <Route path={MOVIE_DETAILS_PATH} element={<MovieDetails />}>
+          <Route path="cast" element={<TmdbCast />} />
+          <Route path="review" element={<TmdbReview />} />
+        </Route>
+        <Route path="*" element={<Navigate to={HOME_PATH} />} />
+      </Route>
+    </Routes>
   );
 };
