@@ -34,7 +34,7 @@ function Movie() {
       {movies.length > 0 ? (
         <TmdbMoviesList movies={movies} />
       ) : (
-        <p>No movies found.</p>
+        <p>No movies found</p>
       )}
     </>
   );

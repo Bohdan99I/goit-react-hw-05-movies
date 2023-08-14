@@ -19,6 +19,7 @@ export const BtN = styled(Link)`
     content: '';
   }
 `;
+
 export const ContainerDetails = styled.div`
   padding: 25px;
 `;

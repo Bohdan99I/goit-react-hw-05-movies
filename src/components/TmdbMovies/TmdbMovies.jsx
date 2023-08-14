@@ -32,4 +32,5 @@ TmdbMoviesList.propTypes = {
     })
   ).isRequired,
 };
+
 export default TmdbMoviesList;

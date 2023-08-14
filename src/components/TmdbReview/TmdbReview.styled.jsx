@@ -4,6 +4,7 @@ export const List = styled.ul`
   padding: 20px;
   list-style: none;
 `;
+
 export const Item = styled.li`
   padding: 20px;
   font-size: 14px;
