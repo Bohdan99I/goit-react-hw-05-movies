@@ -8,6 +8,7 @@ export const Header = styled.header`
   background-color: white;
   box-shadow: -4px -5px 19px #222222;
 `;
+
 export const Navi = styled.nav`
   display: flex;
   gap: 30px;

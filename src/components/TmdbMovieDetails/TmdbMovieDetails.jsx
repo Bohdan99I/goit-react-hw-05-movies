@@ -15,6 +15,7 @@ import {
 function TmdbMovieDetails({ details }) {
   const { title, release_date, vote_average, overview, genres, poster_path } =
     details;
+  
   const date = new Date(release_date).getFullYear();
   const location = useLocation();
   const backLinkLocation = useRef(location.state?.from ?? './movies');

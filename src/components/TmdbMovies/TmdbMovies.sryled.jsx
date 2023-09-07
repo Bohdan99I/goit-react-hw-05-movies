@@ -11,6 +11,7 @@ export const List = styled.ul`
 export const StyledLink = styled(Link)`
   font-size: 18px;
   text-decoration: none;
+  
   &:hover,
   &:focus {
     font-size: 20px;

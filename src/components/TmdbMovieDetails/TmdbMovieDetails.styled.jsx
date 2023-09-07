@@ -45,10 +45,12 @@ export const AddLink = styled(NavLink)`
   display: block;
   text-decoration: none;
   margin-bottom: 10px;
+
   &:hover,
   &:focus {
     color: #c25151;
   }
+  
   &.active {
     color: green;
     font-weight: bold;
