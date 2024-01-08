@@ -10,8 +10,7 @@ function TmdbReview() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!movieId) return;
-
+    if (!movieId) return;    
     fetchAddition(movieId, 'reviews')
       .then(res => {
         setReviews(res.results);
